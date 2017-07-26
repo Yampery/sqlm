@@ -14,7 +14,6 @@ public class PageController {
 
     @RequestMapping("/{url}.do")
     public String page(@PathVariable("url") String url) {
-        String page = url;
-        return page;
+        return url;
     }
 }
