@@ -17,7 +17,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>SpringMVC</servlet-name>
-        <url-pattern>*.do</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
     <!-- 编码过滤器 -->
@@ -57,6 +57,6 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     <welcome-file-list>
-        <welcome-file>panel.do</welcome-file>
+        <welcome-file>/panel</welcome-file>
     </welcome-file-list>
 </web-app>
