@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller("pageController")
 public class PageController {
 
-    @RequestMapping("/{url}.do")
+    @RequestMapping("/{url}")
     public String page(@PathVariable("url") String url) {
-        return url;
+        return url + ".html";
     }
 }
