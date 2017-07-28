@@ -42,3 +42,22 @@ footer a {
   color: #999;
   text-decoration: none;
 }
+
+/**********************************活动页面样式************************************/
+.swiper-photoBrowser {
+  background-color: #000000;
+}
+.swiper-photoBrowser .caption {
+  text-align: center;
+  color: #ffffff;
+  padding: 10px;
+}
+.swiper-photoBrowser .swiper-pagination { position: relative; }
+.swiper-photoBrowser .swiper-pagination-bullet {
+  background: #ffffff;
+  opacity: 0.2;
+}
+.swiper-photoBrowser .swiper-pagination-bullet-active {
+  background: #ffffff;
+  opacity: 1;
+}
