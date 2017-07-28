@@ -12,12 +12,13 @@
       <h1 class="demos-title">Photo Browser</h1>
     </header>
 
-    <div class='demos-content-padded'>
-      <a href="javascript:;" class="weui-btn weui-btn_primary" id="pb2">带说明文案</a>
+    <div class='demos-content-padded' id="pb">
+      <!--<a href="javascript:;" class="weui-btn weui-btn_primary" id="pb2">带说明文案</a>-->
     </div>
 
     #parse("footer.html")
 
+    <script src="${rc.contextPath}/statics/js/swiper.js"></script>
     <script>
       var pb = $.photoBrowser({
           autoOpen: true,
