@@ -19,4 +19,6 @@ public interface ActivityService {
      * @return
      */
     List<TActivity> queryList(Map<String, Object> map);
+
+    void save(TActivity activity);
 }

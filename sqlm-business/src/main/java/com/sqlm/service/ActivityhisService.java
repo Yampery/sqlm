@@ -19,4 +19,6 @@ public interface ActivityhisService {
      * @return
      */
     List<TActivityhis> queryList(Map<String, Object> map);
+
+    void save(TActivityhis activityhis);
 }

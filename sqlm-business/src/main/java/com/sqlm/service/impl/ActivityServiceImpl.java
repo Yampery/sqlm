@@ -22,4 +22,9 @@ public class ActivityServiceImpl implements ActivityService {
     public List<TActivity> queryList(Map<String, Object> map) {
         return activityMapper.queryList(map);
     }
+
+    @Override
+    public void save(TActivity activity) {
+        activityMapper.save(activity);
+    }
 }

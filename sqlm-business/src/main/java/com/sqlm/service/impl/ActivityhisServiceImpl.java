@@ -21,4 +21,9 @@ public class ActivityhisServiceImpl implements ActivityhisService {
     public List<TActivityhis> queryList(Map<String, Object> map) {
         return activityhisMapper.queryList(map);
     }
+
+    @Override
+    public void save(TActivityhis activityhis) {
+        activityhisMapper.save(activityhis);
+    }
 }
