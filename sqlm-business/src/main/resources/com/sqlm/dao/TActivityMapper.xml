@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sqlm.dao.TActivityMapper">
+  <resultMap id="BaseResultMap" type="com.sqlm.pojo.TActivity">
+    <result column="activity_id" jdbcType="BIGINT" property="activityId" />
+    <result column="activity_name" jdbcType="VARCHAR" property="activityName" />
+    <result column="publish_user" jdbcType="VARCHAR" property="publishUser" />
+    <result column="publish_unit" jdbcType="VARCHAR" property="publishUnit" />
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="push_level" jdbcType="BIT" property="pushLevel" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.sqlm.pojo.TActivity">
+    <result column="activity_info" jdbcType="LONGVARCHAR" property="activityInfo" />
+  </resultMap>
+  <sql id="Blob_Column_List">
+    activity_info
+  </sql>
+  <insert id="save" parameterType="com.sqlm.pojo.TActivity">
+    insert into T_ACTIVITY (activity_id, activity_name, publish_user, 
+      publish_unit, publish_time, update_time, 
+      push_level, activity_info)
+    values (#{activityId,jdbcType=BIGINT}, #{activityName,jdbcType=VARCHAR}, #{publishUser,jdbcType=VARCHAR}, 
+      #{publishUnit,jdbcType=VARCHAR}, #{publishTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{pushLevel,jdbcType=BIT}, #{activityInfo,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sqlm.pojo.TActivity">
+    insert into T_ACTIVITY
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="activityId != null">
+        activity_id,
+      </if>
+      <if test="activityName != null">
+        activity_name,
+      </if>
+      <if test="publishUser != null">
+        publish_user,
+      </if>
+      <if test="publishUnit != null">
+        publish_unit,
+      </if>
+      <if test="publishTime != null">
+        publish_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="pushLevel != null">
+        push_level,
+      </if>
+      <if test="activityInfo != null">
+        activity_info,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="activityId != null">
+        #{activityId,jdbcType=BIGINT},
+      </if>
+      <if test="activityName != null">
+        #{activityName,jdbcType=VARCHAR},
+      </if>
+      <if test="publishUser != null">
+        #{publishUser,jdbcType=VARCHAR},
+      </if>
+      <if test="publishUnit != null">
+        #{publishUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="publishTime != null">
+        #{publishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pushLevel != null">
+        #{pushLevel,jdbcType=BIT},
+      </if>
+      <if test="activityInfo != null">
+        #{activityInfo,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
