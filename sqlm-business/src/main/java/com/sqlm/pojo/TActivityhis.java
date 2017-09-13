@@ -1,8 +1,12 @@
 package com.sqlm.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class TActivityhis {
+public class TActivityhis implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private Long activityId;
 
     private String activityName;
