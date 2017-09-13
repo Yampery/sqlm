@@ -2,16 +2,15 @@ package com.sqlm.pojo;
 
 import java.util.Date;
 
-/**
- * @decription TActivity
- * <p>发布活动对象</p>
- * @author Yampery
- * @date 2017/9/7 15:30
- */
 public class TActivity {
+
+    private static final long serialVersionUID = 1L;
+
     private Long activityId;
 
     private String activityName;
+
+    private Long publishUserId;
 
     private String publishUser;
 
@@ -39,6 +38,14 @@ public class TActivity {
 
     public void setActivityName(String activityName) {
         this.activityName = activityName;
+    }
+
+    public Long getPublishUserId() {
+        return publishUserId;
+    }
+
+    public void setPublishUserId(Long publishUserId) {
+        this.publishUserId = publishUserId;
     }
 
     public String getPublishUser() {

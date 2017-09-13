@@ -2,12 +2,6 @@ package com.sqlm.pojo;
 
 import java.util.Date;
 
-/**
- * @decription TActivityhis
- * <p>发布活动历史记录</p>
- * @author Yampery
- * @date 2017/9/7 15:31
- */
 public class TActivityhis {
     private Long activityId;
 
@@ -26,6 +20,8 @@ public class TActivityhis {
     private Boolean auditStatus;
 
     private Boolean activityStatus;
+
+    private Long publishUserId;
 
     private String activityInfo;
 
@@ -99,6 +95,14 @@ public class TActivityhis {
 
     public void setActivityStatus(Boolean activityStatus) {
         this.activityStatus = activityStatus;
+    }
+
+    public Long getPublishUserId() {
+        return publishUserId;
+    }
+
+    public void setPublishUserId(Long publishUserId) {
+        this.publishUserId = publishUserId;
     }
 
     public String getActivityInfo() {

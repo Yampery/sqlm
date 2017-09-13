@@ -11,6 +11,7 @@
     <result column="push_level" jdbcType="BIT" property="pushLevel" />
     <result column="audit_status" jdbcType="BIT" property="auditStatus" />
     <result column="activity_status" jdbcType="BIT" property="activityStatus" />
+    <result column="publish_user_id" jdbcType="BIGINT" property="publishUserId" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.sqlm.pojo.TActivityhis">
     <result column="activity_info" jdbcType="LONGVARCHAR" property="activityInfo" />
@@ -18,15 +19,15 @@
   <sql id="Blob_Column_List">
     activity_info
   </sql>
-  <insert id="insert" parameterType="com.sqlm.pojo.TActivityhis">
+  <insert id="save" parameterType="com.sqlm.pojo.TActivityhis">
     insert into T_ACTIVITYHIS (activity_id, activity_name, publish_user, 
       publish_unit, publish_time, update_time, 
       push_level, audit_status, activity_status, 
-      activity_info)
+      publish_user_id, activity_info)
     values (#{activityId,jdbcType=BIGINT}, #{activityName,jdbcType=VARCHAR}, #{publishUser,jdbcType=VARCHAR}, 
       #{publishUnit,jdbcType=VARCHAR}, #{publishTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{pushLevel,jdbcType=BIT}, #{auditStatus,jdbcType=BIT}, #{activityStatus,jdbcType=BIT}, 
-      #{activityInfo,jdbcType=LONGVARCHAR})
+      #{publishUserId,jdbcType=BIGINT}, #{activityInfo,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.sqlm.pojo.TActivityhis">
     insert into T_ACTIVITYHIS
@@ -57,6 +58,9 @@
       </if>
       <if test="activityStatus != null">
         activity_status,
+      </if>
+      <if test="publishUserId != null">
+        publish_user_id,
       </if>
       <if test="activityInfo != null">
         activity_info,
@@ -89,6 +93,9 @@
       </if>
       <if test="activityStatus != null">
         #{activityStatus,jdbcType=BIT},
+      </if>
+      <if test="publishUserId != null">
+        #{publishUserId,jdbcType=BIGINT},
       </if>
       <if test="activityInfo != null">
         #{activityInfo,jdbcType=LONGVARCHAR},

@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="com.sqlm.pojo.TActivity">
     <result column="activity_id" jdbcType="BIGINT" property="activityId" />
     <result column="activity_name" jdbcType="VARCHAR" property="activityName" />
+    <result column="publish_user_id" jdbcType="BIGINT" property="publishUserId" />
     <result column="publish_user" jdbcType="VARCHAR" property="publishUser" />
     <result column="publish_unit" jdbcType="VARCHAR" property="publishUnit" />
     <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
@@ -17,12 +18,14 @@
     activity_info
   </sql>
   <insert id="save" parameterType="com.sqlm.pojo.TActivity">
-    insert into T_ACTIVITY (activity_id, activity_name, publish_user, 
-      publish_unit, publish_time, update_time, 
-      push_level, activity_info)
-    values (#{activityId,jdbcType=BIGINT}, #{activityName,jdbcType=VARCHAR}, #{publishUser,jdbcType=VARCHAR}, 
-      #{publishUnit,jdbcType=VARCHAR}, #{publishTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{pushLevel,jdbcType=BIT}, #{activityInfo,jdbcType=LONGVARCHAR})
+    insert into T_ACTIVITY (activity_id, activity_name, publish_user_id, 
+      publish_user, publish_unit, publish_time, 
+      update_time, push_level, activity_info
+      )
+    values (#{activityId,jdbcType=BIGINT}, #{activityName,jdbcType=VARCHAR}, #{publishUserId,jdbcType=BIGINT}, 
+      #{publishUser,jdbcType=VARCHAR}, #{publishUnit,jdbcType=VARCHAR}, #{publishTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{pushLevel,jdbcType=BIT}, #{activityInfo,jdbcType=LONGVARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.sqlm.pojo.TActivity">
     insert into T_ACTIVITY
@@ -32,6 +35,9 @@
       </if>
       <if test="activityName != null">
         activity_name,
+      </if>
+      <if test="publishUserId != null">
+        publish_user_id,
       </if>
       <if test="publishUser != null">
         publish_user,
@@ -58,6 +64,9 @@
       </if>
       <if test="activityName != null">
         #{activityName,jdbcType=VARCHAR},
+      </if>
+      <if test="publishUserId != null">
+        #{publishUserId,jdbcType=BIGINT},
       </if>
       <if test="publishUser != null">
         #{publishUser,jdbcType=VARCHAR},
