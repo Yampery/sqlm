@@ -48,6 +48,21 @@
         <param-value>webPath</param-value>
     </context-param>
 
+    <context-param>
+        <param-name>log4jRefreshInterval</param-name>
+        <param-value>600000</param-value>
+    </context-param>
+
+    <!-- 添加druid监控-->
+    <servlet>
+        <servlet-name>DruidStatView</servlet-name>
+        <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DruidStatView</servlet-name>
+        <url-pattern>/druid/*</url-pattern>
+    </servlet-mapping>
+
     <!-- 监听器 -->
     <listener>
         <listener-class>org.springframework.web.util.WebAppRootListener</listener-class>

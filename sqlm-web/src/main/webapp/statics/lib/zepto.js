@@ -1297,7 +1297,7 @@ window.$ === undefined && (window.$ = Zepto)
     xhr: function () {
       return new window.XMLHttpRequest()
     },
-    // MIME types mapping
+    // MIME types apping
     // IIS returns Javascript as "application/x-javascript"
     accepts: {
       script: 'text/javascript, application/javascript, application/x-javascript',
