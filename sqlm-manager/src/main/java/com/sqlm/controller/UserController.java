@@ -16,7 +16,8 @@ import javax.annotation.Resource;
  * @author Yampery
  * @date 2017/9/13 10:44
  */
-@RestController("/user")
+@RestController
+@RequestMapping("/sys/user")
 public class UserController {
 
     private static Logger logger = LoggerFactory.getLogger(UserController.class);

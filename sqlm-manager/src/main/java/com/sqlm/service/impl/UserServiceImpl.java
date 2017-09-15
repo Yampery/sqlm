@@ -8,6 +8,7 @@ import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * @decription UserServiceImpl
@@ -24,6 +25,10 @@ public class UserServiceImpl implements UserService {
     public void save(TUser user) {
         if (StringUtils.isNotBlank(user.getPassword()))
             user.setPassword(new Sha256Hash(user.getPassword()).toHex());
+        // 注册默认为普通用户
+        user.setAuthLevel(1);
+        user.setRegisterTime(new Date());
+        user.setIsActive(1);
         userMapper.save(user);
     }
 }
