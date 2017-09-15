@@ -20,6 +20,16 @@
             <artifactId>sqlm-common</artifactId>
             <version>${sqlm-version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.sqlm</groupId>
+            <artifactId>sqlm-business</artifactId>
+            <version>${sqlm-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sqlm</groupId>
+            <artifactId>sqlm-manager</artifactId>
+            <version>${sqlm-version}</version>
+        </dependency>
     </dependencies>
 
     <build>
