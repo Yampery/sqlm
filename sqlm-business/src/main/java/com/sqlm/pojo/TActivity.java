@@ -21,7 +21,7 @@ public class TActivity implements Serializable {
 
     private Date updateTime;
 
-    private Boolean pushLevel;
+    private int pushLevel;
 
     private String activityInfo;
 
@@ -81,11 +81,11 @@ public class TActivity implements Serializable {
         this.updateTime = updateTime;
     }
 
-    public Boolean getPushLevel() {
+    public int getPushLevel() {
         return pushLevel;
     }
 
-    public void setPushLevel(Boolean pushLevel) {
+    public void setPushLevel(int pushLevel) {
         this.pushLevel = pushLevel;
     }
 

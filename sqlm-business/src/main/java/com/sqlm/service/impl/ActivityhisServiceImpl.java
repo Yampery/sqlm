@@ -3,6 +3,7 @@ package com.sqlm.service.impl;
 import com.sqlm.dao.TActivityhisMapper;
 import com.sqlm.pojo.TActivityhis;
 import com.sqlm.service.ActivityhisService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.Map;
  * @author Yampery
  * @date 2017/9/7 17:07
  */
+@Service
 public class ActivityhisServiceImpl implements ActivityhisService {
 
     @Resource private TActivityhisMapper activityhisMapper;
